@@ -57,10 +57,10 @@ public class Patient{
 
     public void addToFile(File myFile) {
         try (FileWriter writer = new FileWriter(myFile, true)){
-            System.out.print("Name: " + this.name);
-            System.out.print("Id: " + this.id);
-            System.out.print("Symptoms: " + this.symptoms);
-            System.out.print("Registration date: " + this.registrationDate);
+            System.out.println("Name: " + this.name);
+            System.out.println("Id: " + this.id);
+            System.out.println("Symptoms: " + this.symptoms);
+            System.out.println("Registration date: " + this.registrationDate);
 
             writer.write(getName() + "\r\n");
             writer.write(getId() + "\r\n");
@@ -80,5 +80,13 @@ public class Patient{
                 ", registrationDate='" + registrationDate + '\'' +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+
+    public void clear() {
+        this.name = null;
+        this.id = 0;
+        this.symptoms = null;
+        this.registrationDate = null;
     }
 }
