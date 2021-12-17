@@ -33,6 +33,16 @@ public class Main {
                     n1 = scan.next().charAt(0);
                     int n = Character.getNumericValue(n1);
                     addToArray(myFile, n, patientArrayList);
+                    break;
+                case '3':
+                    System.out.print("Скільки обєктів прочитати з файлу у масив? n= ");
+                    n1 = scan.next().charAt(0);
+                    n = Character.getNumericValue(n1);
+                    System.out.print("Прочитані обєкти вставляти у масив починаючи з елементу m= ");
+                    char m1 = scan.next().charAt(0);
+                    int m = Character.getNumericValue(n1);
+//                    setToArray()    Реалізувати метод
+                    break;
             }
         }
     }
