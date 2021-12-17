@@ -14,7 +14,18 @@ public class Main {
             char command = scan.next().charAt(0);
             switch(command){
                 case '1':
-
+                    scan.nextLine();
+                    System.out.println("Patient name: ");
+                    String name = scan.nextLine();
+                    System.out.println("Patient ID: ");
+                    int ID = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println("Patient symptoms: ");
+                    String symptoms = scan.nextLine();
+                    System.out.println("Patient registration date: ");
+                    String registrationDate = scan.nextLine();
+                    Patient patient = new Patient(name, ID, symptoms, registrationDate);
+                    patient.addToFile(myFile);
                     break;
             }
         }

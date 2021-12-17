@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Patient{
     private int id;
 
@@ -49,5 +53,22 @@ public class Patient{
 
     public void getInfo() {
         System.out.println(name + " " + id + " " + symptoms + " " + registrationDate);
+    }
+
+    public void addToFile(File myFile) {
+        try (FileWriter writer = new FileWriter(myFile, true)){
+            System.out.print("Name: " + this.name);
+            System.out.print("Id: " + this.id);
+            System.out.print("Symptoms: " + this.symptoms);
+            System.out.print("Registration date: " + this.registrationDate);
+
+            writer.write(name + "\r\n");
+            writer.write(id + "\r\n");
+            writer.write(symptoms + "\r\n");
+            writer.write(registrationDate + "\r\n");
+            writer.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
