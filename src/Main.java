@@ -27,6 +27,22 @@ public class Main {
                     Patient patient = new Patient(name, ID, symptoms, registrationDate);
                     patient.addToFile(myFile);
                     break;
+                case '2':
+                    System.out.println("How many objects read from file to array? n = ");
+                    char n1;
+                    n1 = scan.next().charAt(0);
+                    int n = Character.getNumericValue(n1);
+                    addToArray(myFile, n, patientArrayList);
+            }
+        }
+    }
+
+    private static void addToArray(File myFile, int n, ArrayList<Patient> patientArrayList) {
+        try(Scanner scanFile = new Scanner(myFile)){
+            int j = 0;
+            System.out.println("-------Read from file in array n objects-------");
+            while(j < n){
+
             }
         }
     }

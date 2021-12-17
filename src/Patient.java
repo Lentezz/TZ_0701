@@ -52,7 +52,7 @@ public class Patient{
     }
 
     public void getInfo() {
-        System.out.println(name + " " + id + " " + symptoms + " " + registrationDate);
+        System.out.println(getName() + " " + getId() + " " + getSymptoms() + " " + getRegistrationDate());
     }
 
     public void addToFile(File myFile) {
@@ -62,13 +62,23 @@ public class Patient{
             System.out.print("Symptoms: " + this.symptoms);
             System.out.print("Registration date: " + this.registrationDate);
 
-            writer.write(name + "\r\n");
-            writer.write(id + "\r\n");
-            writer.write(symptoms + "\r\n");
-            writer.write(registrationDate + "\r\n");
+            writer.write(getName() + "\r\n");
+            writer.write(getId() + "\r\n");
+            writer.write(getSymptoms() + "\r\n");
+            writer.write(getRegistrationDate() + "\r\n");
             writer.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "id=" + id +
+                ", symptoms='" + symptoms + '\'' +
+                ", registrationDate='" + registrationDate + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
