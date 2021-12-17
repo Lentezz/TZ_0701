@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -38,12 +39,25 @@ public class Main {
     }
 
     private static void addToArray(File myFile, int n, ArrayList<Patient> patientArrayList) {
+        Integer id;
+        String name, date, symp;
         try(Scanner scanFile = new Scanner(myFile)){
             int j = 0;
             System.out.println("-------Read from file in array n objects-------");
             while(j < n){
+                name = scanFile.nextLine();
+                id = scanFile.nextInt();
+                symp = scanFile.nextLine();
+                date = scanFile.nextLine();
+                System.out.println("j = " + j + " n = " + n + "\t name: " + name);
+                System.out.println("\tID: " + id);
+                System.out.println("\tSymptoms: " + symp);
+                System.out.println("\tDate of registration: " + date);
 
+                patientArrayList.add(new Patient(name, id, symp, date));
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
